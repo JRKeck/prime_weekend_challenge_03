@@ -1,0 +1,52 @@
+html {
+  margin-top: 20px;
+}
+/* Carousel */
+.carousel {
+  position: relative;
+  min-height: 300px;
+}
+.carousel .slide {
+  background-size: cover;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.carousel .slide.active {
+  display: block;
+}
+/* Carousel Nav*/
+.carousel-nav {
+  text-align: center;
+}
+.carousel-nav .arrow {
+  display: none;
+  vertical-align: top;
+  margin-top: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.carousel-nav .arrow.prev {
+  margin-right: 25px;
+}
+.carousel-nav .arrow.next {
+  margin-left: 25px;
+}
+.carousel-nav .nav-dots {
+  list-style: none;
+  display: inline-block;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.carousel-nav .nav-dots li {
+  color: #bbbcbc;
+  display: inline;
+  font-size: 30px;
+  margin-right: 5px;
+}
+.carousel-nav .nav-dots li.active {
+  color: #363636;
+}

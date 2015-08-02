@@ -1,0 +1,58 @@
+html {
+  margin-top:20px;
+}
+/* Carousel */
+.carousel {
+  position: relative;
+  min-height: 300px;
+
+  .slide {
+    background-size: cover;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &.active {
+      display: block;
+    }
+  }
+}
+/* Carousel Nav*/
+.carousel-nav {
+  text-align: center;
+
+  .arrow {
+    display: none;
+    vertical-align: top;
+    margin-top: 6px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .arrow.prev {
+    margin-right: 25px;
+  }
+
+  .arrow.next {
+    margin-left: 25px;
+  }
+  .nav-dots {
+    list-style: none;
+    display: inline-block;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    li {
+      color: #bbbcbc;
+      display: inline;
+      font-size: 30px;
+      margin-right: 5px;
+
+      &.active {
+        color: #363636;
+      }
+    }
+  }
+}

@@ -1,9 +1,16 @@
 html {
   background-color: #6A7575;
 }
+body {
+  font-family: 'Lora', serif;
+}
 header {
   padding: 0 20px;
   background-color: #fff;
+}
+header h1 {
+  font-family: 'Istok Web', sans-serif;
+  margin: 40px 0 20px;
 }
 .main {
   background-image: url('/assets/images/prime_pano_bw.jpg');
@@ -11,23 +18,25 @@ header {
   background-size: cover;
   background-position: 0% 0%;
   padding: 45px 0;
-  -webkit-transition: background-position 1s ease-in-out 0.3s;
-  -moz-transition: background-position 1s ease-in-out 0.3s;
-  -o-transition: background-position 1s ease-in-out 0.3s;
-  -ms-transition: background-position 1s ease-in-out 0.3s;
-  transition: background-position 1s ease-in-out 0.3s;
+  -webkit-transition: background-position 1200ms cubic-bezier(0.37, 0, 0.645, 1);
+  /* older webkit */
+  -webkit-transition: background-position 1200ms cubic-bezier(0.37, 0, 0.645, 1.005);
+  -moz-transition: background-position 1200ms cubic-bezier(0.37, 0, 0.645, 1.005);
+  -o-transition: background-position 1200ms cubic-bezier(0.37, 0, 0.645, 1.005);
+  transition: background-position 1200ms cubic-bezier(0.37, 0, 0.645, 1.005);
+  /* custom */
 }
 /* Carousel */
 .carousel {
   position: relative;
-  height: 260px;
+  height: 800px;
 }
 .carousel .slide {
   background-color: rgba(255, 255, 255, 0.8);
   background-size: cover;
   display: none;
   position: absolute;
-  padding: 15px;
+  padding: 40px 50px;
   top: 0;
   left: 0;
   width: 100%;
@@ -38,6 +47,10 @@ header {
 }
 .carousel .slide h2 {
   margin: 0 0 10px 0;
+  font-family: 'Istok Web', sans-serif;
+}
+.carousel .slide .shout-out {
+  margin-top: 25px;
 }
 /* Carousel Nav*/
 .carousel-nav {
@@ -60,7 +73,7 @@ header {
 }
 .carousel-nav .nav-dots {
   list-style: none;
-  display: inline-block;
+  display: none;
   padding-left: 0;
   margin-bottom: 0;
 }
@@ -73,8 +86,25 @@ header {
 .carousel-nav .nav-dots li.active {
   color: #07AA9E;
 }
-@media (min-width: 1200px) {
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .carousel {
+    height: 545px;
+  }
+  .carousel .slide .shout-out {
+    margin-top: 0;
+  }
+  .carousel-nav .nav-dots {
+    display: inline-block;
+  }
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
   .container {
     width: 970px;
   }
+  .carousel {
+    height: 420px;
+  }
 }
+/* Large devices (large desktops, 1200px and up) */

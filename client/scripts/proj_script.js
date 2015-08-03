@@ -3,36 +3,16 @@ $(document).ready(function() {
     url: "/data",
     success: function(data){
       $.each(data, function(i){
-              $('.carousel').append('<div class="slide" data-id="'+i+'"></div>');//Add a slide to the carousel
-              $('.slide').last().append('<h2>'+this.name+'</h2>');//Add h2 name to the newly created slide
-              $('.slide').last().append('<div class="description">'+this.desc+'</div>');//Add decription to the newly created slide
-              $('.slide').last().append('<div class="shout-out">'+this.shoutout+'</div>');//Add shoutout to the newly created slide
+              $('.carousel').append('<div class="slide" data-id="'+i+'"><div class="inner row"></div></div>');//Add a slide to the carousel
+              $('.slide .inner').last().append('<h2>'+this.name+'</h2>');//Add h2 name to the newly created slide
+              $('.slide .inner').last().append('<div class="description col-sm-6">'+this.desc+'</div>');//Add decription to the newly created slide
+              $('.slide .inner').last().append('<div class="shout-out col-sm-6">'+this.shoutout+'</div>');
               $('.slide').first().addClass('active');
-              //console.log(i + $('.slide').last().innerHeight());//get slide heights before positioning them as absolute
-
               $('.carousel-nav .arrow').css("display", "inline-block");//show the dot nav arrows once ajax is complete
               $('ul.nav-dots').append('<li class="dot" data-id="'+i+'">&bull;</li>');//Create a nav dot for each slide
               $('.nav-dots .dot').first().addClass('active');
             })
     },
-    // complete: function(){
-
-    //   //get height of the largest div and set carousel height before showing carousel and setting slides to absolute
-    //   var maxHeight = 0;
-    //   $('.slide').each(function($i){
-    //     console.log("before if :" + $(this).height());
-    //     var tmpHeight = $(this).height();
-
-    //         if (tmpHeight > maxHeight) {
-    //           maxHeight = tmpHeight;
-    //           console.log("In if :" + maxHeight);
-    //         }
-    //   })
-    //   $('.carousel').height(maxHeight);
-
-    //   $('.slide').css("position", "absolute");
-    //   $('.carousel').show();
-    // }
   })//End ajax call
 
 
@@ -44,7 +24,6 @@ $(document).ready(function() {
     getPrevSlide();
   });
   $('body').on('click', 'li.dot', function() {
-    console.log("dot click");
     var dotNum = $(this).data("id");
     var currentSlide = $('.slide.active');
     var nextSlide = $('[data-id="'+ dotNum +'"]');
@@ -63,8 +42,8 @@ $(document).ready(function() {
 //$('.carousel').hide();
 //set carousel options
 var carouselOption = {
-  speed : 200,
-  backgroundIncrement : 25,
+  speed : 400,
+  backgroundIncrement : 10,
   backgroundPosition : 0
 };
 

@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
-var cohortData = require("../public/assets/data/beta_cohort.json")
+var cohortData = require("../public/assets/data/beta_cohort.json");
+
 var router = express.Router();
 
 

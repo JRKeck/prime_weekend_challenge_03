@@ -4,7 +4,7 @@ html {
 /* Carousel */
 .carousel {
   position: relative;
-  min-height: 300px;
+  height: 260px;
 }
 .carousel .slide {
   background-size: cover;
@@ -30,10 +30,10 @@ html {
   cursor: pointer;
 }
 .carousel-nav .arrow.prev {
-  margin-right: 25px;
+  margin-right: 5px;
 }
 .carousel-nav .arrow.next {
-  margin-left: 25px;
+  margin-left: 5px;
 }
 .carousel-nav .nav-dots {
   list-style: none;
@@ -45,7 +45,8 @@ html {
   color: #bbbcbc;
   display: inline;
   font-size: 30px;
-  margin-right: 5px;
+  padding: 0 4px;
+  cursor: pointer;
 }
 .carousel-nav .nav-dots li.active {
   color: #363636;

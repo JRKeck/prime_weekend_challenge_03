@@ -54,6 +54,8 @@ $(document).ready(function() {
     nextSlide.fadeIn(carouselOption.speed).addClass('active'); //this will add active class to both slide and the nav dot
 
     currentDot.removeClass('active');
+
+    moveBackground();
   });
 
 });//End DOM Ready
@@ -61,7 +63,9 @@ $(document).ready(function() {
 //$('.carousel').hide();
 //set carousel options
 var carouselOption = {
-  speed : 200
+  speed : 200,
+  backgroundIncrement : 25,
+  backgroundPosition : 0
 };
 
 
@@ -84,6 +88,9 @@ function getNextSlide() {
 
   currentDot.removeClass('active');
   nextDot.addClass('active');
+
+  moveBackground();
+
 }
 
 //fn to move to the prev slide
@@ -104,4 +111,12 @@ function getPrevSlide() {
 
   currentDot.removeClass('active');
   prevDot.addClass('active');
+
+  moveBackground();
+}
+
+//Move background image
+function moveBackground() {
+  carouselOption.backgroundPosition += carouselOption.backgroundIncrement;
+  $('.main').css( 'background-position' , carouselOption.backgroundPosition + '% 0%' );
 }

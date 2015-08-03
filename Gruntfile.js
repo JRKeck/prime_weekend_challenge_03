@@ -2,15 +2,6 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        //watch: {
-        //    less: {
-        //        files: ['client/styles/less/*.less'], // which files to watch
-        //        tasks: ['less'],
-        //        options: {
-        //            spawn: true
-        //        }
-        //    }
-        //},
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -44,6 +35,27 @@ module.exports = function(grunt) {
                     "jquery/dist/jquery.min.map"
                 ],
                 dest: "server/public/vendors/"
+            },
+            font_awesome: {
+                expand: true,
+                cwd: "node_modules",
+                src: [
+                    "font-awesome/css/font-awesome.min.css",
+                    "font-awesome/fonts/FontAwesome.otf",
+                    "font-awesome/fonts/fontawesome-webfont.eot",
+                    "font-awesome/fonts/fontawesome-webfont.svg",
+                    "font-awesome/fonts/fontawesome-webfont.ttf",
+                    "font-awesome/fonts/fontawesome-webfont.woff",
+                    "font-awesome/fonts/fontawesome-webfont.woff2"
+                ],
+                dest: "server/public/vendors/"
+            },
+            images: {
+                expand: true,
+                cwd: "client/images",
+                src: ["*"],
+                dest: "server/public/assets/images/"
+
             }
         }
     });

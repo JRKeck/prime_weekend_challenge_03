@@ -1,5 +1,7 @@
 # Prime Weekend Challenge 3
 
+Heroku link: https://pure-forest-3730.herokuapp.com/
+
 Hey Primates!
 
 For this weekend, you are going to be building a [jQuery Carousel](http://sorgalla.com/jcarousel/examples/basic/). 
